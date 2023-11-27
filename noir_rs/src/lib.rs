@@ -26,6 +26,7 @@ pub fn prove(
         .read_to_end(&mut acir_buffer_uncompressed)
         .map_err(|e| e.to_string())?;
 
+    // throwing error
     let circuit: Circuit =
         bincode::deserialize(&acir_buffer_uncompressed).map_err(|e| e.to_string())?;
 
